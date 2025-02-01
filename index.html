@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is a website">
+        <title>Productivity Planner</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            input {
+                width: 90%;
+                margin: 5px 0;
+                padding: 5px;
+            }
+
+            /* Task List Grid */
+            .task-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* 2 Columns */
+                grid-template-rows: 1fr 1fr; /* 2 Rows */
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .task-section {
+                padding: 15px;
+                border: 2px solid #000;
+                border-radius: 8px;
+                text-align: left;
+                background-color: #f9f9f9;
+            }
+
+            .task-section h3 {
+                text-decoration: underline;
+                text-align: center;
+            }
+
+            .task-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .task-list li {
+                margin: 5px 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .task-list input[type="checkbox"] {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header> 
+            <h1 style="text-align: center;">Welcome to the Productivity Planner</h1>
+            <p style="text-align: center;">
+                Use this Planner to organize your tasks and prioritize them.
+            </p>
+        </header>
+        <main>
+            <table>
+                <tr>
+                    <th>What is important AND urgent?</th>
+                    <th>What is important but NOT urgent?</th>
+                    <th>What is urgent but NOT important?</th>
+                    <th>What is not important AND not urgent?</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form id="importantUrgentForm">
+                            <input type="text" id="importantUrgent1" placeholder="Task 1">
+                            <input type="text" id="importantUrgent2" placeholder="Task 2">
+                            <input type="text" id="importantUrgent3" placeholder="Task 3">
+                            <input type="text" id="importantUrgent4" placeholder="Task 4">
+                            <input type="text" id="importantUrgent5" placeholder="Task 5">
+                        </form>
+                    </td>
+                    <td>
+                        <form id="importantNotUrgentForm">
+                            <input type="text" id="importantNotUrgent1" placeholder="Task 1">
+                            <input type="text" id="importantNotUrgent2" placeholder="Task 2">
+                            <input type="text" id="importantNotUrgent3" placeholder="Task 3">
+                            <input type="text" id="importantNotUrgent4" placeholder="Task 4">
+                            <input type="text" id="importantNotUrgent5" placeholder="Task 5">
+                        </form>
+                    </td>
+                    <td>
+                        <form id="urgentNotImportantForm">
+                            <input type="text" id="urgentNotImportant1" placeholder="Task 1">
+                            <input type="text" id="urgentNotImportant2" placeholder="Task 2">
+                            <input type="text" id="urgentNotImportant3" placeholder="Task 3">
+                            <input type="text" id="urgentNotImportant4" placeholder="Task 4">
+                            <input type="text" id="urgentNotImportant5" placeholder="Task 5">
+                        </form>
+                    </td>
+                    <td>
+                        <form id="notImportantNotUrgentForm">
+                            <input type="text" id="notImportantNotUrgent1" placeholder="Task 1">
+                            <input type="text" id="notImportantNotUrgent2" placeholder="Task 2">
+                            <input type="text" id="notImportantNotUrgent3" placeholder="Task 3">
+                            <input type="text" id="notImportantNotUrgent4" placeholder="Task 4">
+                            <input type="text" id="notImportantNotUrgent5" placeholder="Task 5">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <button id="submitButton" style="margin: 20px auto; display: block;">Submit</button>
+
+            <!-- Task List Display Section (Now in a Grid) -->
+            <div class="task-grid" id="taskListContainer"></div>
+        </main>
+        <script src="variables.js"></script>
+    </body>
+</html>
